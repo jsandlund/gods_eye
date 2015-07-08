@@ -5,9 +5,6 @@ import urllib2
 import pymysql
 import pandas.io.sql as psql
 import pandas as pd
-import logging
-import re 
-from bs4 import BeautifulSoup
 from apiclient.discovery import build
 from urllib2 import Request, urlopen
 import json
@@ -18,6 +15,10 @@ from apiclient.discovery import build
 import tldextract
 from tld import get_tld
 from fuzzywuzzy import fuzz
+
+print urllib2.__version__
+print pymysql.__version__
+print pd.__version__
 
 api_key = "AIzaSyB6F-v_KhoU6vhZRbii1ApUFRnuHxYKVGE"
 
