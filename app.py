@@ -30,23 +30,23 @@ app = Flask(__name__)
 # use decorators to link the function to a url
 @app.route('/')
 def home():
-    print "hello world"
+    return render_template('index.html')  # render a template
 
-@app.route('/data')
+@app.route('/data/firms')
 def data():
     query = '''
     select firm_name,website_url
-    from investor_company_url 
+    from investor_company_url
     where id < 10;'''
     url_data = psql.read_frame(query,conn)
     url_json = url_data.to_json()
     url_json_load = json.loads(url_json)
     return json.dumps(url_json_load)
-    
+
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
-    
+
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
