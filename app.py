@@ -15,11 +15,6 @@ from apiclient.discovery import build
 import tldextract
 from tld import get_tld
 from fuzzywuzzy import fuzz
-
-print urllib2.__version__
-print pymysql.__version__
-print pd.__version__
-
 api_key = "AIzaSyB6F-v_KhoU6vhZRbii1ApUFRnuHxYKVGE"
 
 service = build("customsearch", "v1",developerKey=api_key)
@@ -30,19 +25,34 @@ app = Flask(__name__)
 # use decorators to link the function to a url
 @app.route('/')
 def home():
-    print "hello world"
+    return "hello world"
 
-@app.route('/data')
-def data():
+@app.route('/data/firm')
+def data_firm():
     query = '''
     select firm_name,website_url
     from investor_company_url 
-    where id < 10;'''
+    where result_rank = 0;'''
     url_data = psql.read_frame(query,conn)
     url_json = url_data.to_json()
     url_json_load = json.loads(url_json)
     return json.dumps(url_json_load)
-    
+
+@app.route('/data/prospects')
+def data():
+    query = '''
+    select td.first_name,td.last_name,td.toofr_email,td.toofr_confidence,td.company_url,
+    fc.rep_gender as gender,fc.rep_location as location,fc.rep_klout_score as klout_score,
+    fc.rep_klout_topic as klout_topic,fc.rep_facebook_url as facebook_url,fc.rep_facebook_following as facebook_following,
+    fc.rep_linkedin_url as linkedin_url,fc.rep_twitter_url as twitter_url,fc.rep_twitter_followers as twitter_followers,
+    fc.rep_twitter_following as twitter_following,fc.rep_angellist_url as angellist_url,fc.rep_angellist_followers as angellist_followers
+    from investor_toofr_data td
+    JOIN fullcontact fc ON td.id=fc.toofr_id;'''
+    toofr_fc_data = psql.read_frame(query,conn)
+    toofr_fc_data_json = toofr_fc_data.to_json()
+    toofr_fc_data_json = json.loads(toofr_fc_data_json)
+    return json.dumps(toofr_fc_data_json)
+
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
