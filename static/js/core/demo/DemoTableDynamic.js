@@ -31,13 +31,15 @@
 
 		// Init the demo DataTables
 		this._createDataTable1();
-		this._createDataTable2();
 	};
 
 	p._createDataTable1 = function() {
 		$('#datatable1').DataTable({
 			"dom": 'lCfrtip',
 			"order": [],
+			"tableTools": {
+				"sSwfPath": $('#datatable2').data('swftools')
+			},
 			"colVis": {
 				"buttonText": "Columns",
 				"overlayFade": 0,
@@ -56,38 +58,9 @@
 		$('#datatable1 tbody').on('click', 'tr', function() {
 			$(this).toggleClass('selected');
 		});
+
 	};
 
-	p._createDataTable2 = function() {
-		var table = $('#datatable2').DataTable({
-			"dom": 'T<"clear">lfrtip',
-			"ajax": $('#datatable2').data('source'),
-			"columns": [
-				{
-					"class": 'details-control',
-					"orderable": false,
-					"data": null,
-					"defaultContent": ''
-				},
-				{"data": "name"},
-				{"data": "position"},
-				{"data": "office"},
-				{"data": "salary"}
-			],
-			"tableTools": {
-				"sSwfPath": $('#datatable2').data('swftools')
-			},
-			"order": [[1, 'asc']],
-			"language": {
-				"lengthMenu": '_MENU_ entries per page',
-				"search": '<i class="fa fa-search"></i>',
-				"paginate": {
-					"previous": '<i class="fa fa-angle-left"></i>',
-					"next": '<i class="fa fa-angle-right"></i>'
-				}
-			}
-		});
-		
 		//Add event listener for opening and closing details
 		var o = this;
 		$('#datatable2 tbody').on('click', 'td.details-control', function() {
@@ -105,7 +78,6 @@
 				tr.addClass('shown');
 			}
 		});
-	};
 
 	// =========================================================================
 	// DETAILS
