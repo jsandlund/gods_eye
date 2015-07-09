@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Material Admin - Locked</title>
+		<title> God's Eye Locked </title>
 
 		<!-- BEGIN META -->
 		<meta charset="utf-8">
@@ -12,36 +12,37 @@
 
 		<!-- BEGIN STYLESHEETS -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
-		<link type="text/css" rel="stylesheet" href="../../godseye/static/css/theme-default/bootstrap.css" />
-		<link type="text/css" rel="stylesheet" href="../../godseye/static/css/theme-default/materialadmin.css" />
-		<link type="text/css" rel="stylesheet" href="../../godseye/static/css/theme-default/font-awesome.min.css" />
-		<link type="text/css" rel="stylesheet" href="../../godseye/static/css/theme-default/material-design-iconic-font.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/bootstrap.css" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/materialadmin.css" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/material-design-iconic-font.min.css" />
 		<!-- END STYLESHEETS -->
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
-		<script type="text/javascript" src="../../godseye/static/js/libs/utils/html5shiv.js?1403934957"></script>
-		<script type="text/javascript" src="../../godseye/static/js/libs/utils/respond.min.js?1403934956"></script>
+		<script type="text/javascript" src="../../static/js/libs/utils/html5shiv.js?1403934957"></script>
+		<script type="text/javascript" src="../../static/js/libs/utils/respond.min.js?1403934956"></script>
 		<![endif]-->
 	</head>
 	<body class="menubar-hoverable header-fixed ">
 
 		<!-- BEGIN LOCKED SECTION -->
 		<section class="section-account">
-			<div class="img-backdrop" style="background-image: url('../../godseye/static/img/img16.jpg')"></div>
+			<div class="img-backdrop" style="background-image: url('http://www.episcopalcafe.com/wp-content/uploads/2015/02/eye-of-God-nebula.jpg')"></div>
 			<div class="spacer"></div>
 			<div class="card contain-xs style-transparent">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-sm-12">
-							<img class="img-circle" src="../../godseye/static/img/avatar1.jpg?1403934956" alt="" />
-							<h2> Jonathan Sandlund </h2>
-							<form class="form" action="/" accept-charset="utf-8" method="post">
+
+							<h1> Welcome to God's Eyes</h1>
+
+							<form name="login" class="form" action="/" accept-charset="utf-8">
 								<div class="form-group floating-label">
 									<div class="input-group">
 										<div class="input-group-content">
 											<input type="password" id="password" class="form-control" name="password">
-											<label for="password">Password</label>
+											<label for="password"> Super Secret Password </label>
 										</div>
 										<div class="input-group-btn">
 											<button class="btn btn-floating-action btn-primary" type="submit"><i class="fa fa-lock"></i></button>
@@ -57,21 +58,44 @@
 		<!-- END LOCKED SECTION -->
 
 		<!-- BEGIN JAVASCRIPT -->
-		<script src="../../godseye/static/js/libs/jquery/jquery-1.11.2.min.js"></script>
-		<script src="../../godseye/static/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
-		<script src="../../godseye/static/js/libs/bootstrap/bootstrap.min.js"></script>
-		<script src="../../godseye/static/js/libs/spin.js/spin.min.js"></script>
-		<script src="../../godseye/static/js/libs/autosize/jquery.autosize.min.js"></script>
-		<script src="../../godseye/static/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-		<script src="../../godseye/static/js/core/source/App.js"></script>
-		<script src="../../godseye/static/js/core/source/AppNavigation.js"></script>
-		<script src="../../godseye/static/js/core/source/AppOffcanvas.js"></script>
-		<script src="../../godseye/static/js/core/source/AppCard.js"></script>
-		<script src="../../godseye/static/js/core/source/AppForm.js"></script>
-		<script src="../../godseye/static/js/core/source/AppNavSearch.js"></script>
-		<script src="../../godseye/static/js/core/source/AppVendor.js"></script>
-		<script src="../../godseye/static/js/core/demo/Demo.js"></script>
+		<script src="../../static/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="../../static/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../static/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="../../static/js/libs/spin.js/spin.min.js"></script>
+		<script src="../../static/js/libs/autosize/jquery.autosize.min.js"></script>
+		<script src="../../static/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="../../static/js/core/source/App.js"></script>
+		<script src="../../static/js/core/source/AppNavigation.js"></script>
+		<script src="../../static/js/core/source/AppOffcanvas.js"></script>
+		<script src="../../static/js/core/source/AppCard.js"></script>
+		<script src="../../static/js/core/source/AppForm.js"></script>
+		<script src="../../static/js/core/source/AppNavSearch.js"></script>
+		<script src="../../static/js/core/source/AppVendor.js"></script>
+		<script src="../../static/js/core/demo/Demo.js"></script>
 		<!-- END JAVASCRIPT -->
+
+		<script>
+			$('form').on('submit', function(e) {
+				e.preventDefault();
+				var value = $("input").val();
+
+				console.log(value)
+
+				if(value === "supersecret") {
+
+					$('.fa').removeClass("fa-lock");
+					$('.fa').addClass("fa-unlock");
+					window.setTimeout(function(){
+							window.location.replace("/prospects");
+					}, 2000)
+
+				} else {
+					alert("GO HOME!")
+				}
+			})
+
+
+		</script>
 
 	</body>
 </html>

@@ -25,11 +25,15 @@ app = Flask(__name__)
 # use decorators to link the function to a url
 @app.route('/')
 def home():
-    return render_template('prospects/index.html')  # render a template
+    return render_template('locked.html')  # render a template
 
 @app.route('/prospects/new/')
 def newProspect():
     return render_template('prospects/new.html')  # render a template
+
+@app.route('/prospects/')
+def prospects():
+    return render_template('prospects/index.html')  # render a template
 
 @app.route('/leads/')
 def leads():
@@ -197,12 +201,7 @@ def data():
     toofr_fc_data = psql.read_frame(query,conn)
     test = toofr_fc_data.to_json(orient="index")
     toofr_fc_data_json = json.loads(test)
-    print toofr_fc_data
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')  # render a template
-
+    return json.dumps(toofr_fc_data_json)
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
