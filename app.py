@@ -1,5 +1,5 @@
 # import the Flask class from the flask module
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 import time
 import urllib2
 import pymysql
@@ -25,13 +25,24 @@ app = Flask(__name__)
 # use decorators to link the function to a url
 @app.route('/')
 def home():
-    return "hello world"
+    return render_template('prospects/index.html')  # render a template
+
+@app.route('/new/')
+def newProspect():
+    return render_template('prospects/new.html')  # render a template
+
+@app.route('/hello/', methods=['POST'])
+def hello():
+    firstName=request.form['firstName']
+    lastName=request.form['lastName']
+    companyUrl=request.form['companyUrl']
+    return render_template('form_action.html', firstName=firstName, lastName=lastName)
 
 @app.route('/data/firm')
 def data_firm():
     query = '''
     select firm_name,website_url
-    from investor_company_url 
+    from investor_company_url
     where result_rank = 0;'''
     url_data = psql.read_frame(query,conn)
     url_json = url_data.to_json()
@@ -49,7 +60,7 @@ def data():
     from investor_toofr_data td
     JOIN fullcontact fc ON td.id=fc.toofr_id;'''
     toofr_fc_data = psql.read_frame(query,conn)
-    toofr_fc_data_json = toofr_fc_data.to_json()
+    toofr_fc_data_json = toofr_fc_data.to_json(orient="index")
     toofr_fc_data_json = json.loads(toofr_fc_data_json)
     return json.dumps(toofr_fc_data_json)
 
