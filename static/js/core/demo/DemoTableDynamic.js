@@ -38,7 +38,7 @@
 			"dom": 'lCfrtip',
 			"order": [],
 			"tableTools": {
-				"sSwfPath": $('#datatable2').data('swftools')
+				"sSwfPath": $('#datatable1').data('swftools')
 			},
 			"colVis": {
 				"buttonText": "Columns",

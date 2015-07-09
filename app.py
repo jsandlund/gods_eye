@@ -27,9 +27,13 @@ app = Flask(__name__)
 def home():
     return render_template('prospects/index.html')  # render a template
 
-@app.route('/new/')
+@app.route('/prospects/new/')
 def newProspect():
     return render_template('prospects/new.html')  # render a template
+
+@app.route('/leads/')
+def leads():
+    return render_template('leads/index.html')  # render a template
 
 @app.route('/hello/', methods=['POST'])
 def hello():
