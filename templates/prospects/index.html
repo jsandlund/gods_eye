@@ -1,3 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Material Admin - Dynamic tables</title>
+
+		<!-- BEGIN META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Short explanation about this website">
+		<!-- END META -->
+
+		<!-- BEGIN STYLESHEETS -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="../../static/css/theme-default/bootstrap.css?1422792965" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/materialadmin.css?1425466319" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/font-awesome.min.css?1422529194" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/libs/DataTables/jquery.dataTables.css?1423553989" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/libs/DataTables/extensions/dataTables.colVis.css?1423553990" />
+		<link type="text/css" rel="stylesheet" href="../../static/css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css?1423553990" />
+		<!-- END STYLESHEETS -->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../../static/js/libs/utils/html5shiv.js?1403934957"></script>
+		<script type="text/javascript" src="../../static/js/libs/utils/respond.min.js?1403934956"></script>
+		<![endif]-->
+	</head>
+	<body class="menubar-hoverable menubar-pin menubar-first">
+
+		<!-- BEGIN HEADER-->
+		<header id="header" >
+			<div class="headerbar">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+								<a href="../../html/dashboards/dashboard.html">
+									<span class="text-lg text-bold text-primary"> GOD'S EYE </span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+								<i class="fa fa-bars"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options">
+						<li>
+							<!-- Search form -->
+							<form class="navbar-search" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">
+								</div>
+								<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
+							</form>
+						</li>
+					</ul><!--end .header-nav-toggle -->
+				</div><!--end #header-navbar-collapse -->
+			</div>
+		</header>
+		<!-- END HEADER-->
+
+		<!-- BEGIN BASE-->
+		<div id="base">
+
+			<!-- BEGIN OFFCANVAS LEFT -->
+			<div class="offcanvas">
+			</div><!--end .offcanvas-->
+			<!-- END OFFCANVAS LEFT -->
+
+			<!-- BEGIN CONTENT-->
+			<div id="content">
+				<section class="style-default-bright">
+					<div class="section-header">
+						<h2 class="text-primary">DataTables</h2>
+					</div>
+					<div class="section-body">
+
+						<!-- BEGIN DATATABLE 1 -->
+						<div class="row">
+							<div class="col-md-8">
+								<article class="margin-bottom-xxl">
+									<p class="lead">
+										DataTables is a plug-in for the jQuery Javascript library.
+										It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.
+									</p>
+								</article>
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<div class="row">
+							<div class="col-md-12">
+								<h4>Example 1: Show/hide columns</h4>
+							</div><!--end .col -->
+							<div class="col-lg-12">
+								<div class="table-responsive">
+									<table id="datatable1" class="table table-striped table-hover">
+										<thead>
+											<tr>
+												<th>Rendering engine</th>
+												<th>Browser</th>
+												<th>Platform(s)</th>
+												<th class="sort-numeric">Engine version</th>
+												<th class="sort-alpha">CSS grade</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="gradeX">
+												<td>Trident</td>
+												<td>Internet Explorer 4.0</td>
+												<td>Win 95+</td>
+												<td>4</td>
+												<td>X</td>
+											</tr>
+											<tr class="gradeC">
+												<td>Trident</td>
+												<td>Internet Explorer 5.0</td>
+												<td>Win 95+</td>
+												<td>5</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 5.5</td>
+												<td>Win 95+</td>
+												<td>5.5</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 6</td>
+												<td>Win 98+</td>
+												<td>6</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Trident</td>
+												<td>Internet Explorer 7</td>
+												<td>Win XP SP2+</td>
+												<td>7</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Trident</td>
+												<td>AOL browser (AOL desktop)</td>
+												<td>Win XP</td>
+												<td>6</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Firefox 1.0</td>
+												<td>Win 98+ / OSX.2+</td>
+												<td>1.7</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Firefox 1.5</td>
+												<td>Win 98+ / OSX.2+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Firefox 2.0</td>
+												<td>Win 98+ / OSX.2+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Firefox 3.0</td>
+												<td>Win 2k+ / OSX.3+</td>
+												<td>1.9</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Camino 1.0</td>
+												<td>OSX.2+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Camino 1.5</td>
+												<td>OSX.3+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Netscape 7.2</td>
+												<td>Win 95+ / Mac OS 8.6-9.2</td>
+												<td>1.7</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Netscape Browser 8</td>
+												<td>Win 98SE+</td>
+												<td>1.7</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Netscape Navigator 9</td>
+												<td>Win 98+ / OSX.2+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.0</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.1</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.1</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.2</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.2</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.3</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.3</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.4</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.4</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.5</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.5</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.6</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>1.6</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.7</td>
+												<td>Win 98+ / OSX.1+</td>
+												<td>1.7</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Mozilla 1.8</td>
+												<td>Win 98+ / OSX.1+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Seamonkey 1.1</td>
+												<td>Win 98+ / OSX.2+</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Gecko</td>
+												<td>Epiphany 2.20</td>
+												<td>Gnome</td>
+												<td>1.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>Safari 1.2</td>
+												<td>OSX.3</td>
+												<td>125.5</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>Safari 1.3</td>
+												<td>OSX.3</td>
+												<td>312.8</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>Safari 2.0</td>
+												<td>OSX.4+</td>
+												<td>419.3</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>Safari 3.0</td>
+												<td>OSX.4+</td>
+												<td>522.1</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>OmniWeb 5.5</td>
+												<td>OSX.4+</td>
+												<td>420</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>iPod Touch / iPhone</td>
+												<td>iPod</td>
+												<td>420.1</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Webkit</td>
+												<td>S60</td>
+												<td>S60</td>
+												<td>413</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 7.0</td>
+												<td>Win 95+ / OSX.1+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 7.5</td>
+												<td>Win 95+ / OSX.2+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 8.0</td>
+												<td>Win 95+ / OSX.2+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 8.5</td>
+												<td>Win 95+ / OSX.2+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 9.0</td>
+												<td>Win 95+ / OSX.3+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 9.2</td>
+												<td>Win 88+ / OSX.3+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera 9.5</td>
+												<td>Win 88+ / OSX.3+</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Opera for Wii</td>
+												<td>Wii</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Nokia N800</td>
+												<td>N800</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Presto</td>
+												<td>Nintendo DS browser</td>
+												<td>Nintendo DS</td>
+												<td>8.5</td>
+												<td>C/A<sup>1</sup></td>
+											</tr>
+											<tr class="gradeC">
+												<td>KHTML</td>
+												<td>Konqureror 3.1</td>
+												<td>KDE 3.1</td>
+												<td>3.1</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeA">
+												<td>KHTML</td>
+												<td>Konqureror 3.3</td>
+												<td>KDE 3.3</td>
+												<td>3.3</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeA">
+												<td>KHTML</td>
+												<td>Konqureror 3.5</td>
+												<td>KDE 3.5</td>
+												<td>3.5</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeX">
+												<td>Tasman</td>
+												<td>Internet Explorer 4.5</td>
+												<td>Mac OS 8-9</td>
+												<td>-</td>
+												<td>X</td>
+											</tr>
+											<tr class="gradeC">
+												<td>Tasman</td>
+												<td>Internet Explorer 5.1</td>
+												<td>Mac OS 7.6-9</td>
+												<td>1</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeC">
+												<td>Tasman</td>
+												<td>Internet Explorer 5.2</td>
+												<td>Mac OS 8-X</td>
+												<td>1</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Misc</td>
+												<td>NetFront 3.1</td>
+												<td>Embedded devices</td>
+												<td>-</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeA">
+												<td>Misc</td>
+												<td>NetFront 3.4</td>
+												<td>Embedded devices</td>
+												<td>-</td>
+												<td>A</td>
+											</tr>
+											<tr class="gradeX">
+												<td>Misc</td>
+												<td>Dillo 0.8</td>
+												<td>Embedded devices</td>
+												<td>-</td>
+												<td>X</td>
+											</tr>
+											<tr class="gradeX">
+												<td>Misc</td>
+												<td>Links</td>
+												<td>Text only</td>
+												<td>-</td>
+												<td>X</td>
+											</tr>
+											<tr class="gradeX">
+												<td>Misc</td>
+												<td>Lynx</td>
+												<td>Text only</td>
+												<td>-</td>
+												<td>X</td>
+											</tr>
+											<tr class="gradeC">
+												<td>Misc</td>
+												<td>IE Mobile</td>
+												<td>Windows Mobile 6</td>
+												<td>-</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeC">
+												<td>Misc</td>
+												<td>PSP browser</td>
+												<td>PSP</td>
+												<td>-</td>
+												<td>C</td>
+											</tr>
+											<tr class="gradeU">
+												<td>Other browsers</td>
+												<td>All others</td>
+												<td>-</td>
+												<td>-</td>
+												<td>U</td>
+											</tr>
+										</tbody>
+									</table>
+								</div><!--end .table-responsive -->
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<!-- END DATATABLE 1 -->
+
+						<hr class="ruler-xxl"/>
+
+						<!-- BEGIN DATATABLE 2 -->
+						<div class="row">
+							<div class="col-md-12">
+								<h4>Example 2: Tabletools & row details</h4>
+							</div><!--end .col -->
+							<div class="col-lg-12">
+								<div class="table-responsive">
+									<table id="datatable2" class="table order-column hover" data-source="data/users.json" data-swftools="../../static/js/libs/DataTables/extensions/TableTools/swf/copy_csv_xls_pdf.swf">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Name</th>
+												<th>Position</th>
+												<th>Office</th>
+												<th>Salary</th>
+											</tr>
+										</thead>
+									</table>
+								</div><!--end .table-responsive -->
+							</div><!--end .col -->
+						</div><!--end .row -->
+						<!-- END DATATABLE 2 -->
+
+					</div><!--end .section-body -->
+				</section>
+			</div><!--end #content-->
+			<!-- END CONTENT -->
+
+			<!-- BEGIN MENUBAR-->
+			<div id="menubar" class="menubar-inverse ">
+				<div class="menubar-fixed-panel">
+					<div>
+						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<i class="fa fa-bars"></i>
+						</a>
+					</div>
+					<div class="expanded">
+						<a href="../../html/dashboards/dashboard.html">
+							<span class="text-lg text-bold text-primary "> GOD'S EYE </span>
+						</a>
+					</div>
+				</div>
+
+        <div class="menubar-scroll-panel">
+
+					<!-- BEGIN MAIN MENU -->
+					<ul id="main-menu" class="gui-controls">
+
+						<!-- BEGIN DATA -->
+						<li>
+							<a href="/" >
+                <div class="gui-icon"><i class="fa fa-user"></i></div>
+								<span class="title"> PROSPECTS </span>
+							</a>
+						</li><!--end /menu-li -->
+						<!-- END DATA -->
+
+            <li>
+							<a href="/" >
+                <div class="gui-icon"><i class="fa fa-building"></i></div>
+								<span class="title"> COMPANIES </span>
+							</a>
+						</li><!--end /menu-li -->
+
+					</ul><!--end .main-menu -->
+					<!-- END MAIN MENU -->
+
+				</div><!--end .menubar-scroll-panel-->
+			</div><!--end #menubar-->
+			<!-- END MENUBAR -->
+		</div><!--end #base-->
+		<!-- END BASE -->
+
+		<!-- BEGIN JAVASCRIPT -->
+		<script src="../../static/js/libs/jquery/jquery-1.11.2.min.js"></script>
+		<script src="../../static/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../../static/js/libs/bootstrap/bootstrap.min.js"></script>
+		<script src="../../static/js/libs/spin.js/spin.min.js"></script>
+		<script src="../../static/js/libs/autosize/jquery.autosize.min.js"></script>
+		<script src="../../static/js/libs/DataTables/jquery.dataTables.min.js"></script>
+		<script src="../../static/js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+		<script src="../../static/js/libs/DataTables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+		<script src="../../static/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="../../static/js/core/source/App.js"></script>
+		<script src="../../static/js/core/source/AppNavigation.js"></script>
+		<script src="../../static/js/core/source/AppOffcanvas.js"></script>
+		<script src="../../static/js/core/source/AppCard.js"></script>
+		<script src="../../static/js/core/source/AppForm.js"></script>
+		<script src="../../static/js/core/source/AppNavSearch.js"></script>
+		<script src="../../static/js/core/source/AppVendor.js"></script>
+		<script src="../../static/js/core/demo/Demo.js"></script>
+		<script src="../../static/js/core/demo/DemoTableDynamic.js"></script>
+		<!-- END JAVASCRIPT  -->
+
+	</body>
+</html>
+
+<!--
 <!doctype html>
 <html>
 
@@ -14,7 +634,7 @@
 
     <h1> Table goes here </h1>
 
-  <!-- <table id="example" class="display" cellspacing="0" width="100%">
+  <table id="example" class="display" cellspacing="0" width="100%">
       <thead>
           <tr>
             <th> first_name</th>
@@ -36,9 +656,9 @@
             <th> klout_topic</th>
           </tr>
       </thead>
-  </table>-->
+  </table>
 
-  <table id="example">
+  <table id="prospects-index">
   <thead>
     <tr>
       <th> first_name</th>
@@ -65,8 +685,30 @@
 </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://s3.amazonaws.com/dynatable-docs-static/js/jquery.dynatable.js"></script>
 
+    <script>
+
+      $.getJSON( "data/prospects", function(data) {
+          $('#prospects-index').dynatable({
+            dataset: {
+              records: data
+            }
+          });
+      })
+
+      // $('#prospects-index').dynatable({
+      //   dataset: {
+      //     ajax: true,
+      //     ajaxUrl: '/data/prospects',
+      //     ajaxOnLoad: true,
+      //     records: []
+      //   }
+      // });
+
+    </script>
 
   </body>
 
 </html>
+-->
